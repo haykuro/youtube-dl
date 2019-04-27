@@ -13,11 +13,6 @@ def fix_track(track_str, artist):
     new_track_str = track_str.replace("playerData.artist", '"%s"' % artist)
     new_track_str = new_track_str.replace('trackPrefix.concat( \'', '"')
     new_track_str = new_track_str.replace('\' ), "duration', '", "duration')
-    try:
-        json.loads(new_track_str)
-    except:
-        print(new_track_str)
-        exit(0)
     return new_track_str
 
 class DatPiffMixtapeIE(InfoExtractor):
@@ -55,7 +50,5 @@ class DatPiffMixtapeIE(InfoExtractor):
                 "url": '%s%s' % (track_prefix, track['mfile'])
             }
             entries.append(entry)
-
-        print(entries)
 
         return self.playlist_result(entries, mixtape_id, title)
