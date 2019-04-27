@@ -261,6 +261,11 @@ from .daisuki import (
     DaisukiMottoIE,
     DaisukiMottoPlaylistIE,
 )
+
+from .datpiff import (
+    DatPiffMixtapeIE
+)
+
 from .daum import (
     DaumIE,
     DaumClipIE,
